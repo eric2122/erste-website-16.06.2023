@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Startseite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+            color: #4682B4;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #696969;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        li {
+            margin: 0 10px;
+        }
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #4682B4;
+        }
+        #current-time {
+            font-size: 1.2em;
+            text-align: center;
+            color: #4682B4;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById("current-time").textContent = "Aktuelle Uhrzeit: " + hours + ":" + minutes + ":" + seconds;
+        }
+        setInterval(updateTime, 1000);
+    </script>
+</head>
+<body onload="updateTime()">
+    <div class="container">
+        <h1>Willkommen auf meiner Portfolio-Webseite!</h1>
+        <p>Hier finden Sie Informationen über meine Ausbildung, Projekte und Kontaktinformationen.</p>
+        <nav>
+            <ul>
+                <li><a href="ausbildung.html">Ausbildung</a></li>
+                <li><a href="projekte.html">Projekte</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <p id="current-time"></p>
+    </div>
+</body>
+</html>
